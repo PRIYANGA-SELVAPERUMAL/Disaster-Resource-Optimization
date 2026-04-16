@@ -1,0 +1,102 @@
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 8px;
+  padding: 9px 14px;
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.mc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 13px;
+  border-radius: 11px;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+/* Top shimmer line */
+.mc::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.mc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.mc-icon-wrap { flex-shrink: 0; }
+.mc-icon { font-size: 22px; display: block; line-height: 1; }
+
+.mc-body { min-width: 0; flex: 1; }
+
+.mc-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.mc-val {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mc-unit {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 1px;
+  opacity: 0.85;
+  letter-spacing: 0;
+}
+
+.mc-sub {
+  font-size: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.mc-pulse {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  animation: halo 1.8s ease-in-out infinite;
+}
+
+/* Staggered entry */
+.metrics-bar .mc:nth-child(1) { animation: fadeUp 0.3s ease 0.00s both; }
+.metrics-bar .mc:nth-child(2) { animation: fadeUp 0.3s ease 0.04s both; }
+.metrics-bar .mc:nth-child(3) { animation: fadeUp 0.3s ease 0.08s both; }
+.metrics-bar .mc:nth-child(4) { animation: fadeUp 0.3s ease 0.12s both; }
+.metrics-bar .mc:nth-child(5) { animation: fadeUp 0.3s ease 0.16s both; }
+.metrics-bar .mc:nth-child(6) { animation: fadeUp 0.3s ease 0.20s both; }
+.metrics-bar .mc:nth-child(7) { animation: fadeUp 0.3s ease 0.24s both; }
+.metrics-bar .mc:nth-child(8) { animation: fadeUp 0.3s ease 0.28s both; }
+.metrics-bar .mc:nth-child(9) { animation: fadeUp 0.3s ease 0.32s both; }
+
+@media (max-width: 1600px) { .metrics-bar { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 1100px) { .metrics-bar { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .metrics-bar { grid-template-columns: repeat(2, 1fr); } }

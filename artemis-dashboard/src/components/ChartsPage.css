@@ -1,0 +1,59 @@
+.charts-page {
+  padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+}
+.cc-row  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cc      { display: flex; flex-direction: column; }
+.cc-body { padding: 10px 6px 6px; flex: 1; }
+.cc-note {
+  font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+  color: var(--text-muted); padding: 5px 13px 9px;
+  line-height: 1.65; border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── Analytics stat strip ── */
+.an-stats-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 7px;
+  padding: 10px 14px 0;
+}
+.an-stat {
+  border: 1px solid; border-radius: 9px; padding: 10px 12px;
+  animation: fadeUp 0.4s ease forwards; animation-fill-mode: both;
+  transition: transform 0.2s;
+}
+.an-stat:hover { transform: translateY(-2px); }
+.an-val  { font-family: var(--font-display); font-size: 22px; font-weight: 900; line-height: 1.15; }
+.an-unit { font-size: 12px; font-weight: 700; opacity: 0.82; }
+.an-lbl  {
+  font-size: 8px; text-transform: uppercase; letter-spacing: 0.11em;
+  color: var(--text-muted); margin-top: 3px;
+  font-family: var(--font-mono); font-weight: 800;
+}
+
+/* Stagger delays */
+.an-stat:nth-child(1){animation-delay:.00s} .an-stat:nth-child(2){animation-delay:.04s}
+.an-stat:nth-child(3){animation-delay:.08s} .an-stat:nth-child(4){animation-delay:.12s}
+.an-stat:nth-child(5){animation-delay:.16s} .an-stat:nth-child(6){animation-delay:.20s}
+.an-stat:nth-child(7){animation-delay:.24s} .an-stat:nth-child(8){animation-delay:.28s}
+
+/* Recharts overrides */
+.recharts-cartesian-axis-tick text {
+  fill: var(--text-muted) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+}
+.recharts-legend-item-text {
+  color: var(--text-muted) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 1000px) {
+  .cc-row { grid-template-columns: 1fr; }
+  .an-stats-row { grid-template-columns: repeat(4, 1fr); }
+}

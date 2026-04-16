@@ -1,0 +1,37 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-void);
+  position: relative;
+}
+
+/* CRT scanline overlay - very subtle */
+.scan-overlay {
+  pointer-events: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.015) 2px,
+    rgba(0,0,0,0.015) 4px
+  );
+}
+
+/* Main workspace */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 336px;
+  flex: 1;
+  min-height: 0;
+  padding: 10px 14px 14px;
+  gap: 10px;
+}
+
+.map-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
