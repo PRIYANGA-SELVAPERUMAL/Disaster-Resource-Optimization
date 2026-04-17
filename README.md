@@ -135,7 +135,7 @@ Disaster-related tweets are preprocessed and encoded via DistilBERT. Two paralle
  
 ```
 <img width="1276" height="685" alt="image" src="https://github.com/user-attachments/assets/0ecad872-5263-4427-b031-587dc4b887d2" />
-
+```
 ---
  
 ### 3️⃣ GCN-Based Spatial Risk Refinement
@@ -144,7 +144,6 @@ Zone-level fused risk scores, satellite severity, social severity, urgency, and 
  
 ```
 <img width="1547" height="822" alt="image" src="https://github.com/user-attachments/assets/8dcd9e8d-bd92-40dc-96e5-52c14dc5c501" />
-
 ```
  
 ---
@@ -155,7 +154,6 @@ The PPO agent takes a concatenated zone-level state vector as input and outputs 
  
 ```
 <img width="808" height="431" alt="image" src="https://github.com/user-attachments/assets/ddf5cfb8-debe-425b-b4ec-c5ce6f92d287" />
-
 ```
  
 ---
@@ -166,7 +164,6 @@ The DQN agent approximates the action-value function Q(s, a) using the same stat
  
 ```
 <img width="1277" height="850" alt="image" src="https://github.com/user-attachments/assets/40992d10-deac-4038-b906-e217d92937a3" />
-
 ```
  
 ---
