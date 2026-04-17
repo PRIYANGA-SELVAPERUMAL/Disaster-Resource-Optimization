@@ -117,34 +117,58 @@ To develop an end-to-end, data-driven disaster intelligence framework capable of
 ---
 
 ## 🧠 Model Architecture
+ 
+### 1️⃣ Swin Transformer–UNet (Satellite Damage Assessment)
+ 
+Pre- and post-disaster RGB images are concatenated into a 6-channel input tensor. The encoder uses hierarchical window-based multi-head self-attention with shifted window mechanisms to capture long-range spatial dependencies. The decoder follows a UNet-style design with skip connections to recover spatial resolution and local detail.
+ 
+```
+<img width="1543" height="838" alt="image" src="https://github.com/user-attachments/assets/25d09c6a-baa4-4c48-854d-842966125c14" />
 
 ```
-Satellite Images (xView2)           Social Media Tweets (HumAID)
-        ↓                                       ↓
-Swin Transformer–UNet             DistilBERT Encoder
-        ↓                           ↓                  ↓
-  Satellite Severity         Social Severity      Heuristic Urgency
-           ↓                          ↓                  ↓
-              ── Confidence-Aware Multi-Modal Risk Fusion ──
-                                  ↓
-                    K-Means Spatial Zone Formation
-                                  ↓
-              Graph Convolutional Network (GCN) Risk Refinement
-                                  ↓
-         Population Exposure Grounding (WorldPop 1 km Grid)
-                                  ↓
-           PPO Reinforcement Learning Agent → Resource Allocation
-                                  ↓
-              ARTEMIS Real-Time Decision Support Dashboard
+ 
+---
+ 
+### 2️⃣ DistilBERT Social Media Severity & Urgency Pipeline
+ 
+Disaster-related tweets are preprocessed and encoded via DistilBERT. Two parallel branches estimate social severity (via supervised classification) and social urgency (via heuristic indicators). Outputs are aggregated at the event level with confidence scoring.
+ 
 ```
+<img width="1276" height="685" alt="image" src="https://github.com/user-attachments/assets/0ecad872-5263-4427-b031-587dc4b887d2" />
 
-**Key components:**
-- Swin Transformer–UNet for pixel-wise damage segmentation
-- DistilBERT (transformer) for social severity classification
-- Graph Convolutional Network for spatial risk propagation
-- PPO Actor-Critic (with DQN and Greedy baselines)
-- ARTEMIS simulation dashboard for operational interpretability
+---
+ 
+### 3️⃣ GCN-Based Spatial Risk Refinement
+ 
+Zone-level fused risk scores, satellite severity, social severity, urgency, and WorldPop population counts form node features. A spatial graph is constructed using Haversine distance between zone centroids. Multi-layer GCN propagates and refines risk across neighboring zones.
+ 
+```
+<img width="1547" height="822" alt="image" src="https://github.com/user-attachments/assets/8dcd9e8d-bd92-40dc-96e5-52c14dc5c501" />
 
+```
+ 
+---
+ 
+### 4️⃣ PPO Actor-Critic Architecture (Primary RL Agent)
+ 
+The PPO agent takes a concatenated zone-level state vector as input and outputs a resource allocation action. An actor network produces the policy distribution; a critic network estimates the state value for advantage computation.
+ 
+```
+<img width="808" height="431" alt="image" src="https://github.com/user-attachments/assets/ddf5cfb8-debe-425b-b4ec-c5ce6f92d287" />
+
+```
+ 
+---
+ 
+### 5️⃣ DQN Architecture (Baseline)
+ 
+The DQN agent approximates the action-value function Q(s, a) using the same state representation and action space as PPO, but optimized via temporal-difference learning with experience replay and a periodically updated target network.
+ 
+```
+<img width="1277" height="850" alt="image" src="https://github.com/user-attachments/assets/40992d10-deac-4038-b906-e217d92937a3" />
+
+```
+ 
 ---
 
 ## 🧪 Model Performance
