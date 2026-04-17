@@ -276,16 +276,3 @@ Each framework component was individually removed to measure its contribution to
 
 ---
 
-## 📄 License
-
-This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
-
----
-
-## 📬 Authors
-
-| Name | Institution | Contact |
-|------|------------|---------|
-| S Baghavathi Priya | Amrita School of Computing, Amrita Vishwa Vidyapeetham, Chennai | s_baghavathipriya@ch.amrita.edu |
-| Priyanga S | Amrita School of Computing, Amrita Vishwa Vidyapeetham, Chennai | priyangaselvaperumal2294@gmail.com |
-| Vishnu S | Amrita School of Computing, Amrita Vishwa Vidyapeetham, Chennai | svishnu.2k4@gmail.com |
