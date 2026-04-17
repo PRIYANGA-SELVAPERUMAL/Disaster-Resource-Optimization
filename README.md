@@ -211,6 +211,21 @@ The DQN agent approximates the action-value function Q(s, a) using the same stat
 
 Trained across **8 disaster zones** (5 wind: Haiti, Gulf Coast + 3 flood: Houston, TX) and **96 timesteps** covering real geographic coordinates.
 
+<img width="1919" height="823" alt="image" src="https://github.com/user-attachments/assets/1511a1c0-f7fb-4b23-bb53-10fec500324f" />
+<img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/133de17e-ac72-46c6-bca2-23394da2498f" />
+<img width="1919" height="817" alt="image" src="https://github.com/user-attachments/assets/215b5c74-069b-419e-9b76-77bbdfd20584" />
+<img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/4f46c1ec-f023-4381-a09c-726ac0759a55" />
+<img width="1919" height="827" alt="image" src="https://github.com/user-attachments/assets/1fe089e8-ba63-4e10-8572-2e980c572624" />
+<img width="1919" height="675" alt="image" src="https://github.com/user-attachments/assets/bba872b7-58fb-45e1-bdd4-d7552ecc6a3e" />
+<img width="1919" height="597" alt="image" src="https://github.com/user-attachments/assets/e87cae98-7790-4ab4-8414-6ae6ab939162" />
+<img width="1919" height="697" alt="image" src="https://github.com/user-attachments/assets/393d6743-938a-41e2-b768-7d58acf03fbb" />
+<img width="1919" height="656" alt="image" src="https://github.com/user-attachments/assets/90f1f8bd-ab53-4cb6-b9cd-fc5628a5ea63" />
+
+
+
+
+
+
 ---
 
 ## 🛠 Tech Stack
@@ -232,30 +247,23 @@ Trained across **8 disaster zones** (5 wind: Haiti, Gulf Coast + 3 flood: Housto
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/your-username/Disaster-Resource-Optimization.git
-cd Disaster-Resource-Optimization
+git clone https://github.com/PRIYANGA-SELVAPERUMAL/Disaster-Resource-Optimization.git
+cd Disaster-Resource-Optimization/artemis-dashboard
 ```
 
 **2. Install dependencies**
 ```bash
-pip install -r requirements.txt
+npm install
 ```
 
-**3. Run the notebooks in order**
-
-| Step | Notebook | Description |
-|------|----------|-------------|
-| 1 | `dataset_loading.ipynb` | Load and preprocess all datasets |
-| 2 | `satellite_severity_computation.ipynb` | Compute satellite damage severity scores |
-| 3 | `social_media_severity_computation.ipynb` | Estimate social severity and urgency |
-| 4 | `fusion_of_risk_scores.ipynb` | Multi-modal risk fusion + zone formation |
-| 5 | `gnn_risk_scores.ipynb` | GCN-based spatial risk refinement |
-| 6 | `resource_database.ipynb` | Generate structured disaster resource database |
-| 7 | `ppo_code.ipynb` | Train and evaluate PPO agent |
-| 8 | `dqn_code.ipynb` | Train and evaluate DQN baseline |
-| 9 | `greedy_code.ipynb` | Run greedy heuristic baseline |
-| 10 | `ablation_study_code.ipynb` | Run ablation experiments |
-
+**3. Run the Development Server**
+```bash
+npm install
+```
+**4. Then open in browser**
+```bash
+http://localhost:5173/
+```
 ---
 
 ## 🔬 Ablation Study
